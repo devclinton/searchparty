@@ -1,3 +1,4 @@
 * This project will be an open source tool to cooridate searches in remote places. We should consider search party size, gps tracking ,topograhy, flagging dangerous areas for searchers, having leaders of search, work in offline mode of PWA, support android and ios apps(through capacitor). we should research expert recommadations before planning the project. All work will be in milestones and issues. All work will be tests. All work will be internationalized. It should support 15 most common languages.
-
+* Do not mentiond claude in commits. 
+* First task is making claude.md file, and then a roadmpa with milestones, and creating those on github
 * read /Users/clinton.collins/dev/measureyourself/docs/START.MD and /Users/clinton.collins/dev/measureyourself/CLAUDE.md for common technology and development considerstion I like
