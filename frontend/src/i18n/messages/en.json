@@ -458,5 +458,50 @@
       "description": "When the same data is modified offline by multiple users, the most recent change wins based on timestamp.",
       "lastWriterWins": "Last writer wins (by timestamp)"
     }
+  },
+  "reports": {
+    "title": "Reports & Analytics",
+    "summary": {
+      "title": "Operation Summary",
+      "duration": "Duration",
+      "totalTeams": "Total teams",
+      "totalPersonnel": "Total personnel",
+      "totalSegments": "Total segments",
+      "segmentsCompleted": "Segments completed",
+      "totalArea": "Total area",
+      "averagePod": "Average POD",
+      "totalClues": "Total clues found",
+      "totalTracks": "GPS tracks recorded"
+    },
+    "teamPerformance": {
+      "title": "Team Performance",
+      "deployedDuration": "Deployed duration",
+      "segmentsAssigned": "Segments assigned",
+      "checkIns": "Check-ins",
+      "cluesFound": "Clues found"
+    },
+    "export": {
+      "title": "Export Data",
+      "gpx": "Export GPX Track",
+      "csv": "Export Clues CSV",
+      "kml": "Export KML Segments"
+    },
+    "iap": {
+      "title": "Incident Action Plan",
+      "print": "Print IAP",
+      "subjectInfo": "Subject Information",
+      "communicationPlan": "Communication Plan",
+      "safetyMessage": "Safety Message"
+    },
+    "archive": {
+      "title": "Operation Archive",
+      "noArchived": "No archived operations"
+    },
+    "dashboard": {
+      "title": "Analytics Dashboard",
+      "timeline": "Operation Timeline",
+      "coverageAnimation": "Coverage Animation",
+      "resourceUtilization": "Resource Utilization"
+    }
   }
 }
