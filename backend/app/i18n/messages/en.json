@@ -4,12 +4,31 @@
     "unauthorized": "Authentication required",
     "forbidden": "Access denied",
     "validation": "Validation error",
-    "internal": "Internal server error"
+    "internal": "Internal server error",
+    "too_many_requests": "Too many requests. Please try again later."
   },
   "auth": {
     "login_success": "Login successful",
     "logout_success": "Logout successful",
     "invalid_credentials": "Invalid credentials",
-    "token_expired": "Token expired"
+    "token_expired": "Token expired",
+    "email_already_registered": "Email already registered",
+    "password_too_short": "Password must be at least 8 characters",
+    "invalid_token": "Invalid or expired token",
+    "invalid_refresh_token": "Invalid or expired refresh token",
+    "user_not_found": "User not found or inactive",
+    "registration_success": "Account created successfully",
+    "oauth_error": "Authentication with provider failed",
+    "unsupported_provider": "Unsupported OAuth provider"
+  },
+  "roles": {
+    "incident_commander": "Incident Commander",
+    "operations_chief": "Operations Chief",
+    "division_supervisor": "Division Supervisor",
+    "team_leader": "Team Leader",
+    "searcher": "Searcher",
+    "safety_officer": "Safety Officer",
+    "not_member": "Not a member of this incident",
+    "insufficient_role": "Insufficient permissions for this action"
   }
 }

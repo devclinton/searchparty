@@ -19,5 +19,37 @@
   },
   "disclaimer": {
     "text": "This tool aids coordination and does not replace trained search and rescue leadership. No medical or rescue advice is provided."
+  },
+  "auth": {
+    "login": "Log in",
+    "logout": "Log out",
+    "register": "Create account",
+    "email": "Email",
+    "password": "Password",
+    "displayName": "Display name",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "loginWith": "Log in with {provider}",
+    "orContinueWith": "Or continue with",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 8 characters",
+    "displayNameRequired": "Display name is required",
+    "invalidCredentials": "Invalid email or password",
+    "emailAlreadyRegistered": "This email is already registered",
+    "registrationSuccess": "Account created successfully",
+    "logoutSuccess": "You have been logged out",
+    "sessionExpired": "Your session has expired. Please log in again.",
+    "tooManyRequests": "Too many attempts. Please try again later."
+  },
+  "profile": {
+    "title": "Profile",
+    "contactPhone": "Contact phone",
+    "sarQualifications": "SAR qualifications",
+    "preferredLanguage": "Preferred language",
+    "updateSuccess": "Profile updated successfully",
+    "deleteAccount": "Delete account",
+    "deleteConfirmation": "Are you sure you want to delete your account? This action cannot be undone."
   }
 }
