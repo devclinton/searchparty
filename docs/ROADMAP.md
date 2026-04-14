@@ -157,3 +157,47 @@ Final hardening, accessibility, documentation, and launch.
 - [ ] Privacy policy with data retention details
 - [ ] Landing page and project website
 - [ ] Open source community setup (contributing guide, issue templates, code of conduct)
+
+## Milestone 12: GPS Data Import
+Import GPS tracks and location history from external devices, apps, and file formats.
+
+- [ ] GPX file import and parsing (tracks, waypoints, routes with timestamps)
+- [ ] KML/KMZ file import (Google Earth, Google Timeline exports)
+- [ ] GeoJSON file import (points, linestrings, polygons)
+- [ ] FIT file import (Garmin binary format from inReach, fenix, GPSMAP, Coros, Wahoo)
+- [ ] Google Takeout location history import (JSON format for subject last known movements)
+- [ ] Garmin inReach MapShare live feed integration (poll KML endpoint for real-time positions)
+- [ ] CSV coordinate import with auto-detect column mapping
+- [ ] Import preview and assignment UI (preview on map, assign to incident/team/subject)
+- [ ] Backend import endpoints and storage with source metadata
+- [ ] Tests for GPS import parsers (fixtures for each format)
+- [ ] Translate GPS import UI text
+
+## Milestone 13: Known Trails
+Trail data integration from open sources with offline caching and trail-aware search planning.
+
+- [ ] OpenStreetMap trail data via Overpass API (paths, footways, tracks by bounding box)
+- [ ] Trail data map layer (styled linestrings, color by type, name/attributes on click)
+- [ ] Offline trail data caching in IndexedDB (pre-download with tiles)
+- [ ] Shapefile import for agency trail data (USFS, BLM, NPS shapefiles)
+- [ ] Trail-aware search planning (highlight trails in segments, auto-suggest hasty routes, LPB trail proximity)
+- [ ] Trail intersection and junction detection (decision points for hasty search prioritization)
+- [ ] Custom trail and route drawing (unmapped social trails, game paths from local knowledge)
+- [ ] Backend trail data storage and API (PostGIS linestrings, query by bounding box)
+- [ ] Tests for trail data integration
+- [ ] Translate trail UI text
+
+## Milestone 14: Mesh Network Integration
+Meshtastic LoRa mesh for off-grid position sharing, messaging, and check-ins without cellular connectivity.
+
+- [ ] Meshtastic serial/Bluetooth connection (Web Serial API, Web Bluetooth, Capacitor native)
+- [ ] Meshtastic protobuf message parsing (position reports, text messages, node info)
+- [ ] Mesh position display on map (real-time node positions with battery/signal indicators)
+- [ ] Broadcast own position over mesh (configurable intervals, user ID mapping)
+- [ ] Mesh text messaging for check-ins (predefined messages, bridge to check-in system)
+- [ ] Mesh emergency alert relay (broadcast distress with GPS, display on all nodes)
+- [ ] Mesh network status dashboard (connected nodes, SNR/RSSI, hop count, battery levels)
+- [ ] MQTT bridge for mesh-to-server sync (gateway ingestion, position/message sync)
+- [ ] Mesh node configuration UI (channel, encryption, region, broadcast interval)
+- [ ] Tests for mesh integration
+- [ ] Translate mesh network UI text
