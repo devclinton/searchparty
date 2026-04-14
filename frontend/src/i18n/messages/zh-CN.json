@@ -162,5 +162,68 @@
     "team_leader": "Team Leader",
     "searcher": "Searcher",
     "safety_officer": "Safety Officer"
+  },
+  "map": {
+    "title": "Map",
+    "style": {
+      "map": "Map",
+      "topo": "Topo",
+      "satellite": "Satellite"
+    },
+    "coordinates": {
+      "title": "Coordinates",
+      "format": "Coordinate format",
+      "dd": "Decimal Degrees",
+      "dms": "Degrees Minutes Seconds",
+      "utm": "UTM",
+      "mgrs": "MGRS"
+    },
+    "gps": {
+      "title": "GPS Tracking",
+      "startTracking": "Start tracking",
+      "stopTracking": "Stop tracking",
+      "tracking": "GPS tracking active",
+      "pointsRecorded": "{count} points recorded",
+      "accuracy": "Accuracy: {meters}m",
+      "noSignal": "No GPS signal",
+      "syncTracks": "Sync tracks",
+      "syncComplete": "Synced {count} tracks",
+      "unsyncedTracks": "{count} unsynced tracks"
+    },
+    "tiles": {
+      "downloadArea": "Download tiles for offline use",
+      "downloading": "Downloading tiles...",
+      "progress": "{downloaded}/{total} tiles",
+      "complete": "Download complete",
+      "cacheSize": "Cache size: {size}",
+      "clearCache": "Clear tile cache"
+    },
+    "compass": {
+      "title": "Compass & Bearing",
+      "distance": "Distance",
+      "bearing": "Bearing",
+      "clearMeasurement": "Clear measurement",
+      "clickFirst": "Click on the map to set the first point",
+      "clickSecond": "Click on the map to set the second point"
+    },
+    "terrain": {
+      "title": "Terrain",
+      "forest": "Forest",
+      "openField": "Open field",
+      "water": "Water",
+      "cliff": "Cliff",
+      "scree": "Scree",
+      "wetland": "Wetland"
+    },
+    "elevation": {
+      "title": "Elevation Profile",
+      "altitude": "Altitude",
+      "distance": "Distance"
+    },
+    "positions": {
+      "title": "Team Positions",
+      "lastUpdate": "Last update: {time}",
+      "offline": "Position data unavailable offline"
+    }
   }
 }

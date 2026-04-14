@@ -48,6 +48,8 @@ class FakePool:
         self.incidents: dict[str, dict] = {}
         self.teams: dict[str, dict] = {}
         self.team_members: dict[str, dict] = {}
+        self.gps_tracks: dict[str, dict] = {}
+        self.gps_points: list[dict] = []
 
     async def fetchrow(self, query: str, *args):
         q = query.strip().lower()
@@ -191,6 +193,21 @@ class FakePool:
                 return {"incident_commander_id": inc["incident_commander_id"]}
             return None
 
+        # GPS tracks
+        if "insert into gps_tracks" in q:
+            track = {
+                "id": args[0],
+                "user_id": args[1],
+                "incident_id": args[2],
+                "team_id": args[3],
+                "started_at": args[4],
+                "ended_at": args[5],
+                "point_count": args[6],
+                "created_at": datetime.now(UTC),
+            }
+            self.gps_tracks[args[0]] = track
+            return track
+
         return None
 
     async def fetch(self, query: str, *args):
@@ -258,6 +275,20 @@ class FakePool:
         if "delete from incidents" in q:
             return "DELETE 0"
         return "UPDATE 1"
+
+    async def executemany(self, query: str, args_list):
+        # Used for bulk GPS point insert
+        for args in args_list:
+            self.gps_points.append(
+                {
+                    "track_id": args[0],
+                    "lat": args[1],
+                    "lon": args[2],
+                    "altitude": args[3],
+                    "accuracy": args[4],
+                    "recorded_at": args[5],
+                }
+            )
 
 
 @pytest.fixture

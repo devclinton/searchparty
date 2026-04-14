@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.api.auth import router as auth_router
+from app.api.gps import router as gps_router
 from app.api.incidents import router as incidents_router
 from app.api.oauth import router as oauth_router
 from app.api.teams import router as teams_router
@@ -30,6 +31,7 @@ app.include_router(oauth_router, prefix="/api/v1")
 app.include_router(users_router, prefix="/api/v1")
 app.include_router(incidents_router, prefix="/api/v1")
 app.include_router(teams_router, prefix="/api/v1")
+app.include_router(gps_router, prefix="/api/v1")
 
 
 @app.get("/health")
