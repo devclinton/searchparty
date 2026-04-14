@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.api.auth import router as auth_router
+from app.api.export import router as export_router
 from app.api.gps import router as gps_router
 from app.api.incidents import router as incidents_router
 from app.api.lpb import router as lpb_router
@@ -38,6 +39,7 @@ app.include_router(gps_router, prefix="/api/v1")
 app.include_router(search_router, prefix="/api/v1")
 app.include_router(lpb_router, prefix="/api/v1")
 app.include_router(safety_router, prefix="/api/v1")
+app.include_router(export_router, prefix="/api/v1")
 
 
 @app.get("/health")

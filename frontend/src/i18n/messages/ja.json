@@ -421,5 +421,42 @@
       "forecast": "Forecast",
       "unavailable": "Weather data unavailable"
     }
+  },
+  "sync": {
+    "title": "Sync",
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "syncing": "Syncing...",
+      "error": "Sync Error"
+    },
+    "pending": "{count} pending actions",
+    "willSyncOnline": "Will sync when online",
+    "syncNow": "Sync now",
+    "lastSync": "Last sync: {time}",
+    "neverSynced": "Never synced",
+    "syncComplete": "Sync complete",
+    "syncFailed": "{count} action(s) failed to sync",
+    "queue": {
+      "title": "Offline Queue",
+      "empty": "No queued actions",
+      "replay": "Replay queue",
+      "clear": "Clear queue",
+      "clearConfirm": "Discard all queued actions? This cannot be undone."
+    },
+    "export": {
+      "title": "Data Export",
+      "exportIncident": "Export incident data",
+      "exportDescription": "Download all incident data as a JSON file for transfer via USB or file sharing",
+      "importData": "Import data",
+      "importDescription": "Load incident data from an exported JSON file",
+      "exportSuccess": "Data exported successfully",
+      "importSuccess": "Data imported successfully"
+    },
+    "conflict": {
+      "title": "Conflict Resolution",
+      "description": "When the same data is modified offline by multiple users, the most recent change wins based on timestamp.",
+      "lastWriterWins": "Last writer wins (by timestamp)"
+    }
   }
 }

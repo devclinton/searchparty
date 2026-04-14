@@ -347,6 +347,10 @@ class FakePool:
                     )
             return entries
 
+        # Search segments list
+        if "from search_segments" in q and "incident_id" in q:
+            return []  # No segments in mock by default
+
         # Clues list
         if "from clues" in q and "incident_id" in q:
             return [
