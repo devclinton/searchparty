@@ -288,5 +288,65 @@
       "line": "Line (Type III)",
       "attraction": "Attraction/Sound"
     }
+  },
+  "lpb": {
+    "title": "Lost Person Behavior",
+    "profile": {
+      "title": "Subject Profile",
+      "category": "Category",
+      "description": "Description",
+      "selectCategory": "Select subject category"
+    },
+    "distances": {
+      "title": "Statistical Distance Rings",
+      "p25": "25th percentile",
+      "p50": "50th percentile (median)",
+      "p75": "75th percentile",
+      "p95": "95th percentile",
+      "fromIPP": "from IPP"
+    },
+    "rings": {
+      "title": "Probability Rings",
+      "showRings": "Show probability rings",
+      "hideRings": "Hide probability rings",
+      "basedOn": "Based on: {profile}"
+    },
+    "behaviors": {
+      "title": "Travel Behaviors",
+      "terrainNotes": "Terrain Notes",
+      "typicalBehaviors": "Typical Behaviors"
+    },
+    "categories": {
+      "child_1_3": "Child (1-3 years)",
+      "child_4_6": "Child (4-6 years)",
+      "child_7_12": "Child (7-12 years)",
+      "child_13_15": "Child (13-15 years)",
+      "adult": "Adult (general)",
+      "elderly": "Elderly",
+      "hiker": "Hiker",
+      "hunter": "Hunter",
+      "berry_picker": "Berry picker / Gatherer",
+      "fisher": "Fisher / Angler",
+      "climber": "Climber",
+      "skier": "Skier / Snowboarder",
+      "runner": "Runner",
+      "dementia": "Dementia patient",
+      "despondent": "Despondent / Suicidal"
+    },
+    "priority": {
+      "title": "Search Priority",
+      "highProbability": "High probability area",
+      "mediumProbability": "Medium probability area",
+      "lowProbability": "Low probability area",
+      "suggestion": "Priority suggestion based on LPB data"
+    },
+    "terrain": {
+      "adjustment": "Terrain Adjustment",
+      "barriers": "Terrain barriers reduce probability beyond them",
+      "waterBarrier": "Water feature (river, lake)",
+      "cliffBarrier": "Cliff or steep terrain",
+      "vegetationBarrier": "Dense vegetation",
+      "roadAttractor": "Road (travel attractor)"
+    }
   }
 }
