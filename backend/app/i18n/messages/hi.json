@@ -1,0 +1,15 @@
+{
+  "error": {
+    "not_found": "Resource not found",
+    "unauthorized": "Authentication required",
+    "forbidden": "Access denied",
+    "validation": "Validation error",
+    "internal": "Internal server error"
+  },
+  "auth": {
+    "login_success": "Login successful",
+    "logout_success": "Logout successful",
+    "invalid_credentials": "Invalid credentials",
+    "token_expired": "Token expired"
+  }
+}

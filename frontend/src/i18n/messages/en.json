@@ -1,0 +1,23 @@
+{
+  "common": {
+    "appName": "SearchParty",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "close": "Close"
+  },
+  "home": {
+    "title": "SearchParty",
+    "subtitle": "Search & Rescue Coordination",
+    "description": "Open-source tool for coordinating searches in remote places"
+  },
+  "disclaimer": {
+    "text": "This tool aids coordination and does not replace trained search and rescue leadership. No medical or rescue advice is provided."
+  }
+}
