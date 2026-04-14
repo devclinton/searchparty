@@ -1,99 +1,10 @@
-"""Tests for auth API endpoints.
+"""Tests for auth API endpoints."""
 
-Uses dependency overrides to mock the database pool, allowing tests
-to run without a live PostgreSQL instance.
-"""
-
-from datetime import UTC, datetime
-from uuid import uuid4
-
-import pytest
-from httpx import ASGITransport, AsyncClient
+from httpx import AsyncClient
 
 from app.auth.jwt import create_access_token, create_refresh_token
-from app.auth.password import hash_password
-from app.db.connection import get_pool
-from app.main import app
 
-TEST_USER_ID = uuid4()
-TEST_EMAIL = "test@example.com"
-TEST_PASSWORD = "secure-password-123"
-TEST_HASH = hash_password(TEST_PASSWORD)
-
-
-def make_user_record(
-    user_id=TEST_USER_ID,
-    email=TEST_EMAIL,
-    password_hash=TEST_HASH,
-    display_name="Test User",
-):
-    """Create a dict that mimics an asyncpg Record."""
-    return {
-        "id": user_id,
-        "email": email,
-        "display_name": display_name,
-        "password_hash": password_hash,
-        "oauth_provider": None,
-        "oauth_id": None,
-        "contact_phone": None,
-        "sar_qualifications": [],
-        "preferred_locale": "en",
-        "is_active": True,
-        "created_at": datetime.now(UTC),
-        "updated_at": datetime.now(UTC),
-    }
-
-
-class FakePool:
-    """Mock asyncpg pool that routes queries to test data."""
-
-    def __init__(self):
-        self.users = {}
-
-    async def fetchrow(self, query, *args):
-        query_lower = query.strip().lower()
-        if "from users where id" in query_lower:
-            return self.users.get(str(args[0]))
-        if "from users where email" in query_lower:
-            for u in self.users.values():
-                if u["email"] == args[0]:
-                    return u
-            return None
-        if "insert into users" in query_lower:
-            user = make_user_record(
-                user_id=uuid4(),
-                email=args[0],
-                password_hash=args[2],
-                display_name=args[1],
-            )
-            self.users[str(user["id"])] = user
-            return user
-        return None
-
-    async def fetch(self, query, *args):
-        return []
-
-    async def execute(self, query, *args):
-        return "UPDATE 1"
-
-
-@pytest.fixture
-def fake_pool():
-    pool = FakePool()
-    pool.users[str(TEST_USER_ID)] = make_user_record()
-    return pool
-
-
-@pytest.fixture
-async def client(fake_pool):
-    async def override_get_pool():
-        return fake_pool
-
-    app.dependency_overrides[get_pool] = override_get_pool
-    transport = ASGITransport(app=app)
-    async with AsyncClient(transport=transport, base_url="http://test") as ac:
-        yield ac
-    app.dependency_overrides.clear()
+from .conftest import TEST_EMAIL, TEST_PASSWORD, TEST_USER_ID
 
 
 async def test_register_success(client: AsyncClient):
@@ -184,12 +95,8 @@ async def test_refresh_with_access_token_fails(client: AsyncClient):
     assert resp.status_code == 401
 
 
-async def test_get_me_authenticated(client: AsyncClient):
-    token = create_access_token(TEST_USER_ID)
-    resp = await client.get(
-        "/api/v1/auth/me",
-        headers={"Authorization": f"Bearer {token}"},
-    )
+async def test_get_me_authenticated(client: AsyncClient, auth_headers: dict):
+    resp = await client.get("/api/v1/auth/me", headers=auth_headers)
     assert resp.status_code == 200
     data = resp.json()
     assert data["email"] == TEST_EMAIL

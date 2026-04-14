@@ -30,5 +30,24 @@
     "safety_officer": "Safety Officer",
     "not_member": "Not a member of this incident",
     "insufficient_role": "Insufficient permissions for this action"
+  },
+  "incident": {
+    "not_found": "Incident not found",
+    "created": "Incident created successfully",
+    "status_changed": "Incident status changed to {status}",
+    "invalid_transition": "Cannot transition from {from} to {to}",
+    "only_ic_can_change_status": "Only the Incident Commander can change status",
+    "purge_complete": "Purged {count} expired incidents"
+  },
+  "team": {
+    "not_found": "Team not found",
+    "created": "Team created successfully",
+    "status_changed": "Team status changed to {status}",
+    "dispatched": "Team dispatched",
+    "member_added": "Member added to team",
+    "member_removed": "Member removed from team",
+    "member_not_found": "Team member not found",
+    "check_in_recorded": "Check-in recorded",
+    "overdue": "Team is overdue for check-in"
   }
 }

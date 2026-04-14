@@ -10,7 +10,12 @@
     "back": "Back",
     "next": "Next",
     "search": "Search",
-    "close": "Close"
+    "close": "Close",
+    "confirm": "Confirm",
+    "status": "Status",
+    "actions": "Actions",
+    "created": "Created",
+    "updated": "Updated"
   },
   "home": {
     "title": "SearchParty",
@@ -51,5 +56,111 @@
     "updateSuccess": "Profile updated successfully",
     "deleteAccount": "Delete account",
     "deleteConfirmation": "Are you sure you want to delete your account? This action cannot be undone."
+  },
+  "incident": {
+    "title": "Incidents",
+    "create": "Create incident",
+    "name": "Incident name",
+    "description": "Description",
+    "status": {
+      "planning": "Planning",
+      "active": "Active",
+      "suspended": "Suspended",
+      "closed": "Closed"
+    },
+    "statusChange": "Change status",
+    "statusChangeConfirm": "Are you sure you want to change the status to {status}?",
+    "subject": {
+      "title": "Subject Information",
+      "name": "Subject name",
+      "ageCategory": "Age category",
+      "activity": "Activity type",
+      "condition": "Condition",
+      "clothing": "Clothing description",
+      "medicalNeeds": "Medical needs"
+    },
+    "ageCategories": {
+      "child_1_3": "Child (1-3 years)",
+      "child_4_6": "Child (4-6 years)",
+      "child_7_12": "Child (7-12 years)",
+      "child_13_15": "Child (13-15 years)",
+      "adult": "Adult",
+      "elderly": "Elderly"
+    },
+    "activities": {
+      "hiker": "Hiker",
+      "hunter": "Hunter",
+      "berry_picker": "Berry picker",
+      "fisher": "Fisher",
+      "climber": "Climber",
+      "skier": "Skier",
+      "runner": "Runner",
+      "dementia": "Dementia patient",
+      "despondent": "Despondent",
+      "other": "Other"
+    },
+    "ipp": "Initial Planning Point (IPP)",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "terrainType": "Terrain type",
+    "dataRetention": "Data retention (days)",
+    "noIncidents": "No incidents found",
+    "closed_at": "Closed at"
+  },
+  "team": {
+    "title": "Teams",
+    "create": "Create team",
+    "name": "Team name",
+    "status": {
+      "standby": "Standby",
+      "deployed": "Deployed",
+      "returning": "Returning",
+      "overdue": "Overdue",
+      "stood_down": "Stood down"
+    },
+    "searchType": {
+      "title": "Search type",
+      "hasty": "Hasty (Type I)",
+      "grid": "Grid/Sweep (Type II)",
+      "line": "Line (Type III)",
+      "attraction": "Attraction/Sound"
+    },
+    "checkIn": {
+      "title": "Check-in",
+      "interval": "Check-in interval (minutes)",
+      "lastCheckIn": "Last check-in",
+      "recordCheckIn": "Record check-in",
+      "overdue": "Team is overdue for check-in",
+      "overdueTeams": "Overdue teams"
+    },
+    "members": {
+      "title": "Team members",
+      "add": "Add member",
+      "remove": "Remove member",
+      "role": "Role"
+    },
+    "dispatch": {
+      "title": "Dispatch",
+      "dispatchTeam": "Dispatch team",
+      "turnaroundTime": "Turnaround time",
+      "sectorDescription": "Sector description"
+    },
+    "accountability": {
+      "title": "Accountability Board",
+      "signedIn": "Signed in",
+      "signedOut": "Signed out",
+      "inField": "In field",
+      "returned": "Returned"
+    },
+    "deployedAt": "Deployed at",
+    "noTeams": "No teams created yet"
+  },
+  "roles": {
+    "incident_commander": "Incident Commander",
+    "operations_chief": "Operations Chief",
+    "division_supervisor": "Division Supervisor",
+    "team_leader": "Team Leader",
+    "searcher": "Searcher",
+    "safety_officer": "Safety Officer"
   }
 }
