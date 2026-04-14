@@ -348,5 +348,78 @@
       "vegetationBarrier": "Dense vegetation",
       "roadAttractor": "Road (travel attractor)"
     }
+  },
+  "safety": {
+    "title": "Safety",
+    "hazards": {
+      "title": "Hazard Zones",
+      "create": "Create hazard zone",
+      "name": "Hazard name",
+      "type": {
+        "cliff": "Cliff",
+        "mine_shaft": "Mine shaft",
+        "avalanche": "Avalanche terrain",
+        "flood": "Flood zone",
+        "water": "Water hazard",
+        "wildlife": "Wildlife hazard",
+        "unstable_ground": "Unstable ground",
+        "other": "Other hazard"
+      },
+      "severity": {
+        "caution": "Caution",
+        "warning": "Warning",
+        "danger": "Danger"
+      },
+      "radius": "Hazard radius (meters)",
+      "alertBuffer": "Alert buffer (meters)",
+      "noHazards": "No hazard zones defined"
+    },
+    "geofence": {
+      "alert": "Hazard Zone Alert",
+      "approaching": "You are approaching a hazard zone",
+      "inside": "You are inside a hazard zone!",
+      "distance": "{meters}m from hazard boundary"
+    },
+    "emergency": {
+      "title": "Emergency",
+      "sendAlert": "Send Emergency Alert",
+      "confirmSend": "Send distress signal with your current location?",
+      "alertSent": "Emergency alert sent",
+      "status": {
+        "active": "Active",
+        "acknowledged": "Acknowledged",
+        "resolved": "Resolved"
+      },
+      "acknowledge": "Acknowledge",
+      "resolve": "Resolve",
+      "noAlerts": "No emergency alerts"
+    },
+    "turnaround": {
+      "title": "Turnaround Times",
+      "pastTurnaround": "Past turnaround time!",
+      "minutesRemaining": "{minutes} minutes remaining",
+      "notSet": "No turnaround time set"
+    },
+    "briefing": {
+      "title": "Safety Briefing",
+      "completeBriefing": "Complete safety briefing",
+      "allItemsChecked": "All items checked",
+      "incomplete": "Briefing incomplete",
+      "notBriefed": "Team not yet briefed"
+    },
+    "dashboard": {
+      "title": "Safety Dashboard",
+      "activeHazards": "Active hazard zones",
+      "activeAlerts": "Active emergency alerts",
+      "pastTurnaround": "Teams past turnaround",
+      "overdueCheckin": "Teams overdue check-in",
+      "unbriefedTeams": "Teams without briefing"
+    },
+    "weather": {
+      "title": "Weather",
+      "current": "Current conditions",
+      "forecast": "Forecast",
+      "unavailable": "Weather data unavailable"
+    }
   }
 }

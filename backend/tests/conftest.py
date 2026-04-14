@@ -50,6 +50,9 @@ class FakePool:
         self.team_members: dict[str, dict] = {}
         self.gps_tracks: dict[str, dict] = {}
         self.gps_points: list[dict] = []
+        self.hazard_zones: dict[str, dict] = {}
+        self.emergency_alerts: dict[str, dict] = {}
+        self.safety_briefings: dict[str, dict] = {}
 
     async def fetchrow(self, query: str, *args):
         q = query.strip().lower()
@@ -227,6 +230,69 @@ class FakePool:
             self.gps_points.append(clue)  # reuse list for clues
             return clue
 
+        # Hazard zones
+        if "insert into hazard_zones" in q:
+            hz = {
+                "id": uuid4(),
+                "incident_id": args[0],
+                "created_by_user_id": args[1],
+                "name": args[2],
+                "hazard_type": args[3],
+                "severity": args[4],
+                "description": args[5],
+                "center_lat": args[6],
+                "center_lon": args[7],
+                "radius_meters": args[8],
+                "alert_buffer_meters": args[9],
+                "is_active": True,
+                "created_at": datetime.now(UTC),
+                "updated_at": datetime.now(UTC),
+            }
+            self.hazard_zones[str(hz["id"])] = hz
+            return hz
+
+        # Emergency alerts
+        if "insert into emergency_alerts" in q:
+            alert = {
+                "id": uuid4(),
+                "incident_id": args[0],
+                "user_id": args[1],
+                "team_id": args[2],
+                "lat": args[3],
+                "lon": args[4],
+                "message": args[5],
+                "status": "active",
+                "created_at": datetime.now(UTC),
+                "acknowledged_at": None,
+                "resolved_at": None,
+            }
+            self.emergency_alerts[str(alert["id"])] = alert
+            return alert
+        if "update emergency_alerts set status" in q:
+            alert = self.emergency_alerts.get(str(args[1]))
+            if alert:
+                alert["status"] = args[0]
+                if args[0] == "acknowledged":
+                    alert["acknowledged_at"] = datetime.now(UTC)
+                elif args[0] == "resolved":
+                    alert["resolved_at"] = datetime.now(UTC)
+                return alert
+            return None
+
+        # Safety briefings
+        if "insert into safety_briefings" in q:
+            briefing = {
+                "id": uuid4(),
+                "incident_id": args[0],
+                "team_id": args[1],
+                "briefed_by_user_id": args[2],
+                "items": args[3],
+                "all_items_checked": args[4],
+                "briefed_at": datetime.now(UTC),
+            }
+            self.safety_briefings[str(args[1])] = briefing
+            return briefing
+
         return None
 
     async def fetch(self, query: str, *args):
@@ -290,6 +356,33 @@ class FakePool:
                 and "clue_type" in c
                 and str(c.get("incident_id")) == str(args[0])
             ]
+
+        # Hazard zones list
+        if "from hazard_zones" in q and "incident_id" in q:
+            return [h for h in self.hazard_zones.values() if str(h["incident_id"]) == str(args[0])]
+
+        # Emergency alerts list
+        if "from emergency_alerts" in q and "incident_id" in q:
+            alerts = [
+                a for a in self.emergency_alerts.values() if str(a["incident_id"]) == str(args[0])
+            ]
+            if len(args) > 1:
+                alerts = [a for a in alerts if a["status"] == args[1]]
+            return alerts
+
+        # Unbriefed teams
+        if "from teams t" in q and "safety_briefings" in q:
+            return [
+                {"id": t["id"], "name": t["name"]}
+                for t in self.teams.values()
+                if str(t["incident_id"]) == str(args[0])
+                and str(t["id"]) not in self.safety_briefings
+                and t["status"] != "stood_down"
+            ]
+
+        # Safety briefing for team
+        if "from safety_briefings" in q:
+            return self.safety_briefings.get(str(args[0]))
 
         return []
 
