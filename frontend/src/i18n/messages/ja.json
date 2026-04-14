@@ -225,5 +225,68 @@
       "lastUpdate": "Last update: {time}",
       "offline": "Position data unavailable offline"
     }
+  },
+  "search": {
+    "title": "Search Operations",
+    "segments": {
+      "title": "Search Segments",
+      "create": "Create segment",
+      "name": "Segment name",
+      "drawPolygon": "Draw polygon on map to define search area",
+      "polygon": "Polygon coordinates",
+      "gridSpacing": "Grid spacing (meters)",
+      "status": {
+        "unassigned": "Unassigned",
+        "assigned": "Assigned",
+        "in_progress": "In Progress",
+        "completed": "Completed"
+      },
+      "assignTeam": "Assign team",
+      "priority": "Priority",
+      "notes": "Notes",
+      "noSegments": "No search segments defined"
+    },
+    "pod": {
+      "title": "Probability of Detection",
+      "coverage": "Coverage",
+      "pod": "POD",
+      "passes": "Passes",
+      "esw": "Effective Sweep Width (meters)",
+      "distanceTraveled": "Distance traveled (meters)",
+      "recordPass": "Record search pass",
+      "heatmap": "POD Heatmap",
+      "podPercent": "{value}% POD"
+    },
+    "coverage": {
+      "title": "Coverage Statistics",
+      "totalSegments": "Total segments",
+      "segmentsCompleted": "Segments completed",
+      "segmentsInProgress": "Segments in progress",
+      "totalArea": "Total area",
+      "searchedArea": "Searched area",
+      "averagePod": "Average POD",
+      "overallCoverage": "Overall coverage"
+    },
+    "clues": {
+      "title": "Clues & Evidence",
+      "create": "Mark clue",
+      "description": "Description",
+      "type": {
+        "physical": "Physical evidence",
+        "track": "Track / footprint",
+        "scent": "Scent detection",
+        "witness": "Witness report",
+        "other": "Other"
+      },
+      "photo": "Photo",
+      "foundAt": "Found at",
+      "noClues": "No clues recorded"
+    },
+    "searchTypes": {
+      "hasty": "Hasty (Type I)",
+      "grid": "Grid/Sweep (Type II)",
+      "line": "Line (Type III)",
+      "attraction": "Attraction/Sound"
+    }
   }
 }

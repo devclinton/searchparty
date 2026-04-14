@@ -7,6 +7,7 @@ from app.api.auth import router as auth_router
 from app.api.gps import router as gps_router
 from app.api.incidents import router as incidents_router
 from app.api.oauth import router as oauth_router
+from app.api.search import router as search_router
 from app.api.teams import router as teams_router
 from app.api.users import router as users_router
 from app.db.connection import close_pool, get_pool
@@ -32,6 +33,7 @@ app.include_router(users_router, prefix="/api/v1")
 app.include_router(incidents_router, prefix="/api/v1")
 app.include_router(teams_router, prefix="/api/v1")
 app.include_router(gps_router, prefix="/api/v1")
+app.include_router(search_router, prefix="/api/v1")
 
 
 @app.get("/health")

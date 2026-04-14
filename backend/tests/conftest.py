@@ -208,6 +208,25 @@ class FakePool:
             self.gps_tracks[args[0]] = track
             return track
 
+        # Clues
+        if "insert into clues" in q:
+            clue = {
+                "id": uuid4(),
+                "incident_id": args[0],
+                "segment_id": args[1],
+                "found_by_user_id": args[2],
+                "found_by_team_id": args[3],
+                "lat": args[4],
+                "lon": args[5],
+                "description": args[6],
+                "clue_type": args[7],
+                "photo_url": args[8],
+                "found_at": datetime.now(UTC),
+                "created_at": datetime.now(UTC),
+            }
+            self.gps_points.append(clue)  # reuse list for clues
+            return clue
+
         return None
 
     async def fetch(self, query: str, *args):
@@ -261,6 +280,16 @@ class FakePool:
                         }
                     )
             return entries
+
+        # Clues list
+        if "from clues" in q and "incident_id" in q:
+            return [
+                c
+                for c in self.gps_points
+                if isinstance(c, dict)
+                and "clue_type" in c
+                and str(c.get("incident_id")) == str(args[0])
+            ]
 
         return []
 
