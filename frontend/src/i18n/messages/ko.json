@@ -554,5 +554,69 @@
       "parseFailed": "Failed to parse file",
       "noPoints": "No GPS points found in file"
     }
+  },
+  "trails": {
+    "title": "Known Trails",
+    "show": "Show trails",
+    "hide": "Hide trails",
+    "types": {
+      "path": "Path",
+      "footway": "Footway",
+      "track": "Track",
+      "bridleway": "Bridleway",
+      "cycleway": "Cycleway",
+      "road": "Road",
+      "custom": "Custom"
+    },
+    "sources": {
+      "osm": "OpenStreetMap",
+      "usfs": "US Forest Service",
+      "nps": "National Park Service",
+      "blm": "Bureau of Land Management",
+      "state": "State Agency",
+      "shapefile": "Shapefile Import",
+      "custom": "Custom"
+    },
+    "osm": {
+      "title": "Fetch from OpenStreetMap",
+      "fetchArea": "Fetch trails for visible area",
+      "fetching": "Fetching trail data...",
+      "imported": "Imported {count} trails",
+      "noTrails": "No trails found in this area"
+    },
+    "shapefile": {
+      "title": "Import Shapefile",
+      "upload": "Upload shapefile (.zip)",
+      "source": "Data source agency",
+      "imported": "Imported {count} trails"
+    },
+    "custom": {
+      "title": "Draw Custom Trail",
+      "draw": "Click on map to draw trail points",
+      "finish": "Finish trail",
+      "cancel": "Cancel drawing",
+      "name": "Trail name"
+    },
+    "junctions": {
+      "title": "Trail Junctions",
+      "detect": "Detect junctions",
+      "detecting": "Analyzing trail intersections...",
+      "found": "{count} junctions detected",
+      "none": "No junctions found",
+      "trailsCount": "{count} trails meet here",
+      "priority": "Search priority: {score}"
+    },
+    "planning": {
+      "trailsInSegment": "{count} trails cross this segment",
+      "suggestHasty": "Suggested hasty search route along trails",
+      "trailProximity": "Subject profile indicates trail-following behavior"
+    },
+    "attributes": {
+      "surface": "Surface",
+      "difficulty": "Difficulty",
+      "length": "Length",
+      "source": "Source"
+    },
+    "noTrails": "No trail data loaded"
   }
 }

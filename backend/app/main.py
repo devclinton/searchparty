@@ -14,6 +14,7 @@ from app.api.reports import router as reports_router
 from app.api.safety import router as safety_router
 from app.api.search import router as search_router
 from app.api.teams import router as teams_router
+from app.api.trails import router as trails_router
 from app.api.users import router as users_router
 from app.db.connection import close_pool, get_pool
 
@@ -44,6 +45,7 @@ app.include_router(safety_router, prefix="/api/v1")
 app.include_router(export_router, prefix="/api/v1")
 app.include_router(reports_router, prefix="/api/v1")
 app.include_router(gps_import_router, prefix="/api/v1")
+app.include_router(trails_router, prefix="/api/v1")
 
 
 @app.get("/health")
