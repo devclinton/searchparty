@@ -230,6 +230,39 @@ class FakePool:
             self.gps_points.append(clue)  # reuse list for clues
             return clue
 
+        # Mesh nodes
+        if "insert into mesh_nodes" in q:
+            node = {
+                "node_id": args[0],
+                "incident_id": args[1],
+                "user_id": args[2],
+                "long_name": args[3],
+                "short_name": args[4],
+                "hw_model": args[5],
+                "battery_level": args[6],
+                "last_lat": args[7],
+                "last_lon": args[8],
+                "last_altitude": args[9],
+                "snr": args[10],
+                "last_heard_at": datetime.now(UTC),
+                "created_at": datetime.now(UTC),
+            }
+            return node
+
+        # Mesh messages
+        if "insert into mesh_messages" in q:
+            msg = {
+                "id": uuid4(),
+                "incident_id": args[0],
+                "from_node": args[1],
+                "to_node": args[2],
+                "channel": args[3],
+                "message_text": args[4],
+                "is_emergency": args[5],
+                "received_at": datetime.now(UTC),
+            }
+            return msg
+
         # Hazard zones
         if "insert into hazard_zones" in q:
             hz = {

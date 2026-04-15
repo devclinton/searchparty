@@ -618,5 +618,77 @@
       "source": "Source"
     },
     "noTrails": "No trail data loaded"
+  },
+  "mesh": {
+    "title": "Mesh Network",
+    "status": {
+      "disconnected": "Disconnected",
+      "connecting": "Connecting...",
+      "connected": "Connected",
+      "error": "Connection Error"
+    },
+    "connect": {
+      "usb": "Connect via USB",
+      "bluetooth": "Connect via Bluetooth",
+      "disconnect": "Disconnect",
+      "description": "Connect a Meshtastic device for off-grid team tracking"
+    },
+    "nodes": {
+      "title": "Mesh Nodes",
+      "battery": "Battery",
+      "snr": "Signal (SNR)",
+      "lastHeard": "Last heard",
+      "gps": "Has GPS",
+      "noNodes": "Waiting for node discovery...",
+      "count": "{count} node(s)"
+    },
+    "positions": {
+      "title": "Mesh Positions",
+      "age": "{time} ago",
+      "altitude": "Altitude",
+      "satellites": "Satellites"
+    },
+    "messages": {
+      "title": "Messages",
+      "send": "Send message",
+      "noMessages": "No messages yet",
+      "emergency": "EMERGENCY"
+    },
+    "checkIn": {
+      "title": "Quick Check-in",
+      "ok": "OK",
+      "returning": "Returning",
+      "needHelp": "Need Help",
+      "emergency": "EMERGENCY",
+      "atWaypoint": "At Waypoint"
+    },
+    "emergency": {
+      "relayTitle": "Emergency Relay",
+      "relayDescription": "Emergency alerts are broadcast to all mesh nodes",
+      "received": "Emergency received from {node}"
+    },
+    "dashboard": {
+      "title": "Network Status",
+      "totalNodes": "Total nodes",
+      "nodesWithGps": "Nodes with GPS",
+      "avgBattery": "Average battery",
+      "avgSnr": "Average SNR",
+      "messageCount": "Messages"
+    },
+    "mqtt": {
+      "title": "MQTT Bridge",
+      "description": "Server-side ingestion of mesh data via MQTT gateway",
+      "connected": "MQTT bridge connected",
+      "disconnected": "MQTT bridge disconnected"
+    },
+    "config": {
+      "title": "Device Configuration",
+      "channelName": "Channel name",
+      "psk": "Pre-shared key",
+      "region": "Region",
+      "broadcastInterval": "Position broadcast interval (seconds)",
+      "hopLimit": "Hop limit",
+      "apply": "Apply configuration"
+    }
   }
 }
