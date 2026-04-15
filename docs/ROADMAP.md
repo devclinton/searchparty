@@ -201,3 +201,32 @@ Meshtastic LoRa mesh for off-grid position sharing, messaging, and check-ins wit
 - [ ] Mesh node configuration UI (channel, encryption, region, broadcast interval)
 - [ ] Tests for mesh integration
 - [ ] Translate mesh network UI text
+
+## Milestone 15: Drone Integration & Search Patterns
+Automated drone search pattern generation, flight plan export, telemetry, and video metadata coordination.
+
+### Search Patterns
+- [ ] Parallel track (lawnmower) pattern generator with FOV-based track spacing
+- [ ] Expanding square pattern from IPP with LPB integration
+- [ ] Sector search and creeping line ahead patterns
+- [ ] Camera FOV and track spacing calculator with drone model presets (DJI M3E, Matrice 30T, Autel EVO II, Skydio X10, Parrot ANAFI USA)
+
+### Flight Plan Export
+- [ ] DJI WPML format (Pilot 2 / FlightHub 2 compatible)
+- [ ] MAVLink mission format (ArduPilot, PX4, QGroundControl)
+- [ ] KML and Litchi CSV universal export
+- [ ] Obstacle avoidance configuration per mission (stop, bypass, disabled)
+
+### Fleet & Telemetry
+- [ ] Drone fleet management (register, assign to segments, track status)
+- [ ] Real-time telemetry ingestion (DJI Cloud API, MAVLink) with live map tracking
+- [ ] Search pattern coverage analysis (actual vs planned, gap detection, drone POD)
+
+### Video Metadata
+- [ ] DJI SRT sidecar file import (per-frame GPS, gimbal angle, timestamps)
+- [ ] Video metadata index with map-to-timestamp linking (no video hosting)
+
+### Infrastructure
+- [ ] Drone-specific database migration (registry, missions, telemetry, video metadata)
+- [ ] Tests for patterns, exporters, SRT parsing, coverage analysis
+- [ ] Translate drone UI text for all 15 languages
