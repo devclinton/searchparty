@@ -503,5 +503,56 @@
       "coverageAnimation": "Coverage Animation",
       "resourceUtilization": "Resource Utilization"
     }
+  },
+  "import": {
+    "title": "Import GPS Data",
+    "upload": "Upload file",
+    "dragDrop": "Drag and drop a file, or click to browse",
+    "supportedFormats": "Supported formats: GPX, KML, KMZ, GeoJSON, FIT, CSV",
+    "detecting": "Detecting format...",
+    "preview": {
+      "title": "Import Preview",
+      "formatDetected": "Format detected: {format}",
+      "tracks": "{count} track(s)",
+      "waypoints": "{count} waypoint(s)",
+      "totalPoints": "{count} total points",
+      "trackNames": "Track names"
+    },
+    "commit": {
+      "title": "Import to Incident",
+      "selectIncident": "Select incident",
+      "sourceLabel": "Source label (optional)",
+      "tag": "Tag (optional)",
+      "importing": "Importing...",
+      "success": "Imported {tracks} track(s) with {points} points",
+      "failed": "Import failed"
+    },
+    "formats": {
+      "gpx": "GPX (GPS Exchange Format)",
+      "kml": "KML (Google Earth)",
+      "kmz": "KMZ (Compressed KML)",
+      "geojson": "GeoJSON",
+      "fit": "FIT (Garmin Binary)",
+      "csv": "CSV (Comma-Separated Values)",
+      "google_takeout": "Google Takeout (Location History)"
+    },
+    "googleTakeout": {
+      "title": "Google Takeout Import",
+      "description": "Import a missing person's location history from their Google account to reconstruct their last known movements.",
+      "instructions": "Go to takeout.google.com on the subject's account, export Location History as JSON, and upload the file here."
+    },
+    "inreach": {
+      "title": "Garmin inReach MapShare",
+      "description": "Connect to a Garmin inReach MapShare feed for live position tracking",
+      "mapshareUrl": "MapShare URL or ID",
+      "fetch": "Fetch positions",
+      "fetching": "Fetching...",
+      "noPositions": "No positions found in feed"
+    },
+    "errors": {
+      "unknownFormat": "Could not detect file format",
+      "parseFailed": "Failed to parse file",
+      "noPoints": "No GPS points found in file"
+    }
   }
 }

@@ -12,6 +12,8 @@ dependencies = [
     "python-jose[cryptography]>=3.3.0",
     "bcrypt>=5.0.0",
     "httpx>=0.27.0",
+    "fitdecode>=0.10.0",
+    "python-multipart>=0.0.9",
 ]
 
 [project.optional-dependencies]
@@ -42,6 +44,7 @@ select = [
 ignore = [
     "S101",  # allow assert in tests
     "B008",  # allow function calls in defaults (FastAPI Depends/Query pattern)
+    "N817",  # allow CamelCase imported as acronym (e.g., ElementTree as ET)
 ]
 
 [tool.ruff.lint.per-file-ignores]
