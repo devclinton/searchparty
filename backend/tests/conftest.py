@@ -263,6 +263,71 @@ class FakePool:
             }
             return msg
 
+        # Drones
+        if "insert into drones" in q:
+            drone = {
+                "id": uuid4(),
+                "incident_id": args[0],
+                "model": args[1],
+                "serial_number": args[2],
+                "pilot_user_id": args[3],
+                "nickname": args[4],
+                "has_thermal": args[5],
+                "obstacle_avoidance": args[6],
+                "status": "standby",
+                "battery_percent": None,
+                "camera_fov_h": None,
+                "camera_fov_v": None,
+                "sensor_width_mm": None,
+                "focal_length_mm": None,
+                "image_width_px": None,
+                "image_height_px": None,
+                "created_at": datetime.now(UTC),
+                "updated_at": datetime.now(UTC),
+            }
+            return drone
+
+        # Drone missions
+        if "insert into drone_missions" in q:
+            mission = {
+                "id": uuid4(),
+                "incident_id": args[0],
+                "drone_id": args[1],
+                "segment_id": args[2],
+                "name": args[3],
+                "pattern_type": args[4],
+                "status": "planned",
+                "altitude_meters": args[5],
+                "speed_ms": args[6],
+                "overlap_percent": args[7],
+                "gimbal_pitch": args[8],
+                "obstacle_avoidance": args[9],
+                "waypoints": args[10],
+                "area_sq_meters": args[11],
+                "estimated_flight_time_seconds": args[12],
+                "export_format": None,
+                "actual_coverage_percent": None,
+                "created_at": datetime.now(UTC),
+                "updated_at": datetime.now(UTC),
+            }
+            return mission
+
+        # Video metadata
+        if "insert into video_metadata" in q:
+            vid = {
+                "id": uuid4(),
+                "incident_id": args[0],
+                "drone_id": args[1],
+                "mission_id": args[2],
+                "filename": args[3],
+                "external_url": args[4],
+                "duration_seconds": args[5],
+                "frame_count": args[6],
+                "telemetry": args[7],
+                "created_at": datetime.now(UTC),
+            }
+            return vid
+
         # Hazard zones
         if "insert into hazard_zones" in q:
             hz = {

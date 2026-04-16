@@ -690,5 +690,106 @@
       "hopLimit": "Hop limit",
       "apply": "Apply configuration"
     }
+  },
+  "drone": {
+    "title": "Drone Operations",
+    "fleet": {
+      "title": "Drone Fleet",
+      "register": "Register drone",
+      "model": "Drone model",
+      "serial": "Serial number",
+      "pilot": "Assigned pilot",
+      "nickname": "Nickname",
+      "thermal": "Has thermal camera",
+      "status": {
+        "standby": "Standby",
+        "flying": "Flying",
+        "returning": "Returning",
+        "charging": "Charging",
+        "maintenance": "Maintenance"
+      },
+      "battery": "Battery",
+      "noDrones": "No drones registered"
+    },
+    "patterns": {
+      "title": "Search Patterns",
+      "parallelTrack": "Parallel Track (Lawnmower)",
+      "expandingSquare": "Expanding Square",
+      "sectorSearch": "Sector Search",
+      "creepingLine": "Creeping Line Ahead",
+      "custom": "Custom Waypoints"
+    },
+    "mission": {
+      "title": "Missions",
+      "create": "Create mission",
+      "name": "Mission name",
+      "altitude": "Flight altitude (meters)",
+      "speed": "Flight speed (m/s)",
+      "overlap": "Image overlap (%)",
+      "gimbalPitch": "Gimbal pitch angle",
+      "heading": "Primary heading (degrees)",
+      "maxRadius": "Maximum radius (meters)",
+      "numSectors": "Number of sectors",
+      "waypoints": "{count} waypoints",
+      "estimatedTime": "Estimated flight time: {time}",
+      "status": {
+        "planned": "Planned",
+        "exported": "Exported",
+        "in_flight": "In Flight",
+        "completed": "Completed",
+        "aborted": "Aborted"
+      }
+    },
+    "camera": {
+      "title": "Camera Settings",
+      "preset": "Camera preset",
+      "fov": "Field of View",
+      "groundCoverage": "Ground coverage at altitude",
+      "trackSpacing": "Track spacing",
+      "gsd": "Ground resolution (cm/px)"
+    },
+    "obstacle": {
+      "title": "Obstacle Avoidance",
+      "stop": "Stop at obstacle",
+      "bypass": "Auto-bypass obstacle",
+      "disabled": "Disabled (wilderness mode)",
+      "description": "For wilderness SAR, disabling may prevent false triggers from vegetation"
+    },
+    "export": {
+      "title": "Export Flight Plan",
+      "wpml": "DJI WPML (Pilot 2 / FlightHub 2)",
+      "mavlink": "MAVLink (QGroundControl / ArduPilot)",
+      "kml": "KML (Google Earth / Universal)",
+      "litchi": "Litchi CSV (DJI Consumer Drones)",
+      "download": "Download flight plan"
+    },
+    "video": {
+      "title": "Video Metadata",
+      "uploadSrt": "Upload DJI SRT file",
+      "srtDescription": "Import per-frame GPS and gimbal data from drone video recordings",
+      "externalUrl": "External video URL (optional)",
+      "frames": "{count} frames",
+      "duration": "Duration: {time}",
+      "hasGps": "GPS data available",
+      "noGps": "No GPS data in SRT",
+      "clickToTimestamp": "Click map location to find video timestamp"
+    },
+    "coverage": {
+      "title": "Coverage Analysis",
+      "actual": "Actual coverage",
+      "planned": "Planned coverage",
+      "gaps": "Coverage gaps detected",
+      "dronePod": "Drone POD"
+    },
+    "presets": {
+      "dji_m3e": "DJI Mavic 3 Enterprise",
+      "dji_m3t_thermal": "DJI Mavic 3T (Thermal)",
+      "dji_m30t_wide": "DJI Matrice 30T (Wide)",
+      "dji_m30t_thermal": "DJI Matrice 30T (Thermal)",
+      "dji_m350_h20t": "DJI Matrice 350 RTK + H20T",
+      "autel_evo2_dual": "Autel EVO II Dual 640T",
+      "skydio_x10": "Skydio X10",
+      "parrot_anafi_usa": "Parrot ANAFI USA"
+    }
   }
 }
